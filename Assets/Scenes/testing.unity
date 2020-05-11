@@ -833,8 +833,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4f84a9ab076884f9a938eb79ebcd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 100
-  MaxAmount: 100
+  Amount: 10
+  MaxAmount: 10
 --- !u!114 &1359888177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,8 +847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30ed667a071ac94f933008990f06e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 100
-  MaxAmount: 100
+  Amount: 10
+  MaxAmount: 10
 --- !u!1 &1372283635
 GameObject:
   m_ObjectHideFlags: 0

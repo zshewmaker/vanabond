@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Interfaces;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class NextTurnController : MonoBehaviour
+public class NextTurnController : MonoBehaviour, IResettable
 {
     public Button NextTurnButton;
     public Text GasValueText;
@@ -12,8 +14,6 @@ public class NextTurnController : MonoBehaviour
     void Start()
     {
         NextTurnButton.onClick.AddListener(OnNextTurn);
-        GasValueText.text = GasComponent.Amount.ToString();
-        SupplyValueText.text = SuppliesComponent.Amount.ToString();
     }
 
     void OnNextTurn()
@@ -22,11 +22,15 @@ public class NextTurnController : MonoBehaviour
         var supplies = --SuppliesComponent.Amount;
         if (gas <= 0 || supplies <= 0)
         {
-            Debug.Log("you ded");
             NextTurnButton.interactable = false;
         }
 
         GasValueText.text = gas.ToString();
         SupplyValueText.text = supplies.ToString();
+    }
+
+    public void Reset()
+    {
+        NextTurnButton.interactable = true;
     }
 }

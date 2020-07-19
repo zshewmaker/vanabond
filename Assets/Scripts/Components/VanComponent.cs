@@ -4,43 +4,55 @@ using UnityEngine;
 
 public class VanComponent : MonoBehaviour
 {
-    public VanContext Context;
-    public Resource[] Resources;
+	public VanContext Context;
+	public Resource[] Resources;
 
-    public delegate void ResourceChangeAction(Resource resource, VanContext context);
-    public static event ResourceChangeAction OnResourceChange;
+	public delegate void ResourceChangeAction(Resource resource, VanContext context);
+	public static event ResourceChangeAction OnResourceChange;
 
-    void Start()
+	public Resource GetResource(string key)
+	{
+		return Resources.FirstOrDefault(x => x.Key == key);
+	}
+
+	public void ResetResourcesToDefault()
     {
+        foreach (var resource in Resources)
+        {
+			resource.Value = resource.DefaultValue;
+			BroadcastResourceChange(resource);
+		}
     }
 
-    void Update()
-    {
-    }
+	public void IncreaseResource(string key, float amount)
+	{
+		AdjustResource(key, resource => Math.Min(resource.MaxValue, resource.Value + amount));
+	}
 
-    public Resource GetResource(string key)
-    {
-        return Resources.FirstOrDefault(x => x.Key == key);
-    }
+	public void DecreaseResource(string key, float amount)
+	{
+		AdjustResource(key, resource => Math.Max(0, resource.Value - amount));
+	}
 
-    public void IncreaseResource(string key, float amount)
-    {
-        AdjustResource(key, resource => Math.Min(resource.MaxValue, resource.Value + amount));
-    }
+	private void AdjustResource(string key, Func<Resource, float> fn)
+	{
+		var resource = Resources.FirstOrDefault(x => x.Key == key);
+		if (resource == null)
+		{
+			return;
+		}
 
-    public void DecreaseResource(string key, float amount)
-    {
-        AdjustResource(key, resource => Math.Max(0, resource.Value - amount));
-    }
+		resource.Value = fn(resource);
+		BroadcastResourceChange(resource);
+	}
 
-    public void AdjustResource(string key, Func<Resource, float> fn)
-    {
-        var resource = Resources.FirstOrDefault(x => x.Key == key);
-        if (resource == null) return;
+	private void BroadcastResourceChange(Resource resource)
+	{
+		if (OnResourceChange == null)
+		{
+			return;
+		}
 
-        resource.Value =fn(resource);
-        if (OnResourceChange == null) return;
-
-        OnResourceChange(resource, Context);
-    }
+		OnResourceChange(resource, Context);
+	}
 }

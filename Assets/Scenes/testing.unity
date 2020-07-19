@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -253,8 +254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MakeMoneyButton: {fileID: 21618312}
-  MoneyText: {fileID: 0}
-  MoneyComponent: {fileID: 1359888178}
+  Van: {fileID: 1743874847}
 --- !u!1 &157039650
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +571,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -831,6 +832,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -966,6 +968,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1000,10 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuySuppliesButton: {fileID: 597644776}
-  MoneyText: {fileID: 0}
-  MoneyComponent: {fileID: 1359888178}
-  SuppliesText: {fileID: 0}
-  SuppliesComponent: {fileID: 1359888176}
+  Van: {fileID: 1743874847}
 --- !u!1 &645602247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1056,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1136,6 +1137,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1255,6 +1257,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1289,10 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BuyGasButton: {fileID: 814979703}
-  MoneyText: {fileID: 0}
-  MoneyComponent: {fileID: 1359888178}
-  GasText: {fileID: 480041996}
-  GasComponent: {fileID: 1359888177}
+  Van: {fileID: 1743874847}
 --- !u!1 &847357447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,12 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResetGameButton: {fileID: 847357450}
-  GasValueText: {fileID: 480041996}
-  SupplyValueText: {fileID: 0}
-  MoneyValueText: {fileID: 0}
-  GasComponent: {fileID: 1359888177}
-  SuppliesComponent: {fileID: 1359888176}
-  MoneyComponent: {fileID: 1359888178}
+  Van: {fileID: 1743874847}
 --- !u!114 &847357450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,6 +1405,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1483,6 +1479,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1560,6 +1557,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1829,6 +1827,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1880,6 +1879,36 @@ PrefabInstance:
         type: 3}
       propertyPath: Resources.Array.data[2].MaxValue
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387645836760936623, guid: aefdd0b0ef9ab0a46865686a2f7f3203,
+        type: 3}
+      propertyPath: Resources.Array.data[0].Value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387645836760936623, guid: aefdd0b0ef9ab0a46865686a2f7f3203,
+        type: 3}
+      propertyPath: Resources.Array.data[1].Value
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387645836760936623, guid: aefdd0b0ef9ab0a46865686a2f7f3203,
+        type: 3}
+      propertyPath: Resources.Array.data[2].Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387645836760936623, guid: aefdd0b0ef9ab0a46865686a2f7f3203,
+        type: 3}
+      propertyPath: Resources.Array.data[0].DefaultValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387645836760936623, guid: aefdd0b0ef9ab0a46865686a2f7f3203,
+        type: 3}
+      propertyPath: Resources.Array.data[1].DefaultValue
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387645836760936623, guid: aefdd0b0ef9ab0a46865686a2f7f3203,
+        type: 3}
+      propertyPath: Resources.Array.data[2].DefaultValue
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8848357358675272894, guid: aefdd0b0ef9ab0a46865686a2f7f3203,
         type: 3}

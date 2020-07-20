@@ -5,10 +5,7 @@ using UnityEngine.UI;
 public class NextTurnController : MonoBehaviour, IResettable
 {
     public Button NextTurnButton;
-    public Text GasValueText;
-    public Text SupplyValueText;
-    public GasComponent GasComponent;
-    public SuppliesComponent SuppliesComponent;
+    public VanComponent Van;
 
     void Start()
     {
@@ -17,15 +14,12 @@ public class NextTurnController : MonoBehaviour, IResettable
 
     void OnNextTurn()
     {
-        var gas = --GasComponent.Amount;
-        var supplies = --SuppliesComponent.Amount;
-        if (gas <= 0 || supplies <= 0)
+        Van.DecreaseResource("gas", 10);
+        Van.DecreaseResource("supplies", 2);
+        if (Van.GetResource("gas").Value <= 0 || Van.GetResource("supplies").Value <= 0)
         {
             NextTurnButton.interactable = false;
         }
-
-        GasValueText.text = gas.ToString();
-        SupplyValueText.text = supplies.ToString();
     }
 
     public void Reset()

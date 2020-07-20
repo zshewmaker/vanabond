@@ -6,27 +6,15 @@ namespace Assets.Scripts.Controllers
 	public class BuySuppliesController : MonoBehaviour
 	{
 		public Button BuySuppliesButton;
-		public Text MoneyText;
-		public MoneyComponent MoneyComponent;
-		public Text SuppliesText;
-		public SuppliesComponent SuppliesComponent;
+		public VanComponent Van;
 
 		void Start()
 		{
-			BuySuppliesButton.onClick.AddListener(OnBuySupplies);
-		}
-
-		void OnBuySupplies()
-		{
-			if (MoneyComponent.Amount <= 0)
+			BuySuppliesButton.onClick.AddListener(() =>
 			{
-				return;
-			}
-
-			var money = --MoneyComponent.Amount;
-			MoneyText.text = money.ToString();
-			var supplies = ++SuppliesComponent.Amount;
-			SuppliesText.text = supplies.ToString();
+				Van.DecreaseResource("money", 1);
+				Van.IncreaseResource("supplies", 1);
+			});
 		}
 	}
 }
